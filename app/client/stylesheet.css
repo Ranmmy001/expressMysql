@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+    color: #333;
+}
+
+.container {
+    width: 60%;
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Card Layout */
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* Form */
+.form-group {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #4a90e2;
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #4a90e2;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #357abd;
+}
+
+button.secondary {
+    background: #6c757d;
+}
+
+button.secondary:hover {
+    background: #5a6268;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead {
+    background: #f1f3f6;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+tbody tr {
+    border-top: 1px solid #eee;
+}
+
+tbody tr:hover {
+    background: #fafafa;
+}
+
+/* Action buttons */
+.action-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.delete {
+    background: #e74c3c;
+}
+
+.delete:hover {
+    background: #c0392b;
+}
+
+.edit {
+    background: #f39c12;
+}
+
+.edit:hover {
+    background: #d68910;
+}
+
+/* Hidden */
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* main {
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+table {
+    margin: 50px auto;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+
+th, td {
+    padding: 5px;
+} */

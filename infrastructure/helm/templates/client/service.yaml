@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  expressMysql-frontend-service
+  namespace:  client
+spec:
+  selector:
+    app:  expressMysqlFrontend
+  type:  LoadBalancer
+  ports:
+  - name:  expressMysql-frontend-port
+    port:  80
+    targetPort:  80

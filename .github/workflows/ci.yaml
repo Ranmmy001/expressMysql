@@ -1,0 +1,31 @@
+name: "ci runner for expressMysql frontend"
+on: 
+  push:
+    branches:
+      - master
+env:
+  IMAGE_TAG: ${{ github.sha }}
+  IMAGE_NAME: expressMysql_frontend
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    steps:
+    - name:  checkout to root directory
+      uses: actions/checkout@v6
+
+    - name: echo image tag
+      run: echo ${{ env.IMAGE_TAG }}
+
+    - name: build a docker image using the dockerfile in root directory
+      run: |
+        sudo docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} .
+
+    - name: Login to dockerhub
+      run: |
+        sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p "${{ secrets.DOCKER_PASSWORD }}"
+
+    - name: push the image built to dockerhub
+      run: |
+        sudo docker push ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+
+

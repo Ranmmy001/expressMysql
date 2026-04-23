@@ -1,0 +1,41 @@
+services:
+
+  mysql:
+    image: mysql:8
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_DATABASE: expressMysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build: ./server
+    container_name: express_backend
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASSWORD: ""
+      DB_DATABASE: expressMysql
+      DB_PORT: 3306
+      SERVER_PORT: 5000
+
+  frontend:
+    build: ./client
+    container_name: frontend_app
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:

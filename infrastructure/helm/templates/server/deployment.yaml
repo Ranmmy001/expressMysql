@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expressMysqlBackend
+  namespace: server
+spec:
+  selector:
+    matchLabels:
+      app: expressMysqlBackend
+  template:
+    metadata:
+      labels:
+        app: expressMysqlBackend
+    spec:
+      containers:
+      - name: server-container
+        image: expressMysql_backend
+        ports:
+        - containerPort: 80
