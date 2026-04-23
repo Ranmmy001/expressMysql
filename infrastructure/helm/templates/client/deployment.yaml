@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: client-container
-        # image: olaranmmy/expressmysql_frontend:20260423-140953
-        image: olaranmmy/expressmysql_frontend:latest
+        image: olaranmmy/expressmysql_frontend:20260423-140953
+        # image: olaranmmy/expressmysql_frontend:latest
         ports:
         - containerPort: 80
