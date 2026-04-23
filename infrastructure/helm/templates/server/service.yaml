@@ -1,13 +1,13 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name:  expressMysql-backend-service
+  name:  express-mysql-backend-service
   namespace:  server
 spec:
   selector:
-    app:  expressMysqlBackend
+    app:  express-mysql-backend
   type:  LoadBalancer
   ports:
-  - name:  expressMysql-backend-port
+  - name:  express-mysql-backend-port
     port:  80
     targetPort:  5000

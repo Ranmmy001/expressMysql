@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: expressMysqlFrontend
+  name: express-mysql-frontend
   namespace: client
 spec:
   selector:
     matchLabels:
-      app: expressMysqlFrontend
+      app: express-mysql-frontend
   template:
     metadata:
       labels:
-        app: expressMysqlFrontend
+        app: express-mysql-frontend
     spec:
       containers:
       - name: client-container
-        image: expressMysql_frontend
+        image: expressmysql_frontend
         ports:
         - containerPort: 80
