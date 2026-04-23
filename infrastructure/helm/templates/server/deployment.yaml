@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: server-container
-        image: olaranmmy/expressmysql_backend:20260423-140953
-        # image: olaranmmy/expressmysql_backend:latest
+        # image: olaranmmy/expressmysql_backend:20260423-140953
+        image: olaranmmy/expressmysql_backend:latest
         ports:
         - containerPort: 80
