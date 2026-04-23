@@ -16,10 +16,6 @@ jobs:
     - name: Generate timestamp tag
       run: echo "IMAGE_TAG=$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_ENV
 
-    # - name: build docker image using dockerfile in respective directory
-    #   run: |
-    #     sudo docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ env.FRONTEND_IMAGE_NAME }}:${{ env.IMAGE_TAG }} ./app/client
-    #     sudo docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ env.BACKEND_IMAGE_NAME }}:${{ env.IMAGE_TAG }} ./app/server
 
     - name: build docker image using dockerfile in respective directory
       run: |
@@ -33,7 +29,11 @@ jobs:
 
     - name: push the images built to dockerhub
       run: |
-        sudo docker push ${{ secrets.DOCKER_USERNAME }}/${{ env.FRONTEND_IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-        sudo docker push ${{ secrets.DOCKER_USERNAME }}/${{ env.BACKEND_IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+        sudo docker push ${{ secrets.DOCKER_USERNAME }}/${{ env.FRONTEND_IMAGE_NAME }}:latest
+        sudo docker push ${{ secrets.DOCKER_USERNAME }}/${{ env.BACKEND_IMAGE_NAME }}:latest
 
 
+
+
+
+        
