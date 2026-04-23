@@ -3,21 +3,29 @@ kind: Deployment
 metadata:
   name: express-mysql-backend
   namespace: server
+
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: backend=olaranmmy/expressmysql_backend
+    argocd-image-updater.argoproj.io/backend.update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: git
+
 spec:
   selector:
     matchLabels:
       app: express-mysql-backend
+
   template:
     metadata:
       labels:
         app: express-mysql-backend
+
     spec:
       containers:
       - name: server-container
-        # image: olaranmmy/expressmysql_backend:20260423-140953
         image: olaranmmy/expressmysql_backend:latest
+
         ports:
-        - containerPort: 80
+        - containerPort: 5000
 
         env:
           - name: DB_HOST
