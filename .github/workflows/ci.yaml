@@ -18,8 +18,9 @@ jobs:
 
     - name: build docker image using dockerfile in respective directory
       run: |
-        sudo docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ env.FRONTEND_IMAGE_NAME }}:${{ env.IMAGE_TAG }} .
-        sudo docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ env.BACKEND_IMAGE_NAME }}:${{ env.IMAGE_TAG }} .
+        sudo docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ env.FRONTEND_IMAGE_NAME }}:${{ env.IMAGE_TAG }} ./app/client
+        sudo docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ env.BACKEND_IMAGE_NAME }}:${{ env.IMAGE_TAG }} ./app/server
+
 
     - name: Login to dockerhub
       run: |
